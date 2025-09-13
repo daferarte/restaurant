@@ -7,6 +7,7 @@ import Layout from "./components/layout/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
 import Reservas from "./pages/Reservas/Reservas"
+import Carrito from "./pages/Carrito/Carrito";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<Home/>} />
           <Route path="/menu" element={<Menu/>} />
           <Route path="/reservas" element={<Reservas/>} />
+          <Route path="/carrito" element={<Carrito/>} />
         </Route>
       </Routes>
     </BrowserRouter>

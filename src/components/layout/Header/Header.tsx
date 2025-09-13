@@ -25,6 +25,9 @@ export default function Header(){
                     <NavLink to="/menu" style={({isActive})=>({...linkStyle, ...(isActive ? activeStyle:{})})}>
                         Menu
                     </NavLink>
+                    <NavLink to="/carrito" style={({isActive})=>({...linkStyle, ...(isActive ? activeStyle:{})})}>
+                        Carrito
+                    </NavLink>
 
                 </nav>
             </div>
