@@ -1,6 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+/** @type {import ('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html", 
+    "./src/**/*.{ts,tsx}",
+    "node_modules/flowbite-react/lib/esm/**/*.js",
+  ],
   theme: {
     extend: {
       colors:{
@@ -22,10 +26,10 @@ export default {
         body:["Inter", "ui-sans-serif", "system-ui"],
       },
       borderRadius:{
-        x1:"14px"
+        xl:"14px"
       }
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 }
 

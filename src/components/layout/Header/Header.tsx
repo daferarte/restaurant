@@ -1,34 +1,31 @@
 import { NavLink } from "react-router-dom";
 
-const linkStyle: React.CSSProperties = {
-    textDecoration: "none",
-    padding: "8px 12px",
-    borderRadius: 8,
-    fontWeight: 600,
-};
-
-const activeStyle: React.CSSProperties = {
-    background: "#f0f0f0",
-}
+const base = "px-3 py-2 rounded-lg font-semibold hover:bg-neutral-100 transition";
+const active = "bg-neutral-100"
 
 export default function Header(){
     return(
-        <header style={{borderBottom: "1px solid #eee", padding: "16px 0"}}>
-            <div style={{maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", gap: 24}}>
-                <div style={{fontSize: 20, fontWeight:800}}>
+        <header className="border-b border-neutral-200">
+            <div className="max-w-6xl mx-auto flex items-center gap-6 px-4 py-4">
+                <div className="font-display text-xl font-bold text-brand-600">
                     Mi Restaurante
                 </div>
-                <nav style={{display:"flex", gap:8}}>
-                    <NavLink to="/" style={({isActive})=>({...linkStyle, ...(isActive ? activeStyle:{})})}>
-                        Inicio
-                    </NavLink>
-                    <NavLink to="/menu" style={({isActive})=>({...linkStyle, ...(isActive ? activeStyle:{})})}>
-                        Menu
-                    </NavLink>
-                    <NavLink to="/carrito" style={({isActive})=>({...linkStyle, ...(isActive ? activeStyle:{})})}>
-                        Carrito
-                    </NavLink>
-
+                <nav className="flex flex-wrap gap-1">
+                    {[
+                        { to: "/", label: "Inicio"},
+                        { to: "/menu", label: "Menú"},
+                        { to: "/carrito", label: "Carrito"},
+                        { to: "/sobre", label: "Sobre"},
+                        { to: "/contacto", label: "Contacto"},
+                    ].map((item)=>(
+                        <NavLink
+                            key={item.to}
+                            to={item.to}
+                            className={({ isActive }) =>`${base} ${isActive ? active : ""}`}
+                        >
+                            {item.label}
+                        </NavLink>
+                    ))}
                 </nav>
             </div>
         </header>
