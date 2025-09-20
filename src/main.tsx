@@ -9,6 +9,8 @@ import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";
 import Reservas from "./pages/Reservas/Reservas"
 import Carrito from "./pages/Carrito/Carrito";
+import MenuIndex from "./pages/Menu/MenuIndex";
+import Entradas from "./pages/Menu/Entradas";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -17,9 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home/>} />
-          <Route path="/menu/*" element={<Menu/>}>
-            <Route index element={MenuIndex />} />
-            <Route path="Entradas" element={Entradas />} />
+          <Route path="/menu/*" element={<Menu />}>
+            <Route index element={<MenuIndex/>} />
+            <Route path="Entradas" element={<Entradas/>} />
           </Route>
           <Route path="/reservas" element={<Reservas/>} />
           <Route path="/carrito" element={<Carrito/>} />

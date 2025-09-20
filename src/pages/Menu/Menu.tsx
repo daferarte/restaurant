@@ -31,6 +31,10 @@ export default function Menu(){
                 </nav>
             </header>
 
+            <div className=" border rounded-xl p-4">
+                <Outlet/>
+            </div>
+
             
         </section>
     );
