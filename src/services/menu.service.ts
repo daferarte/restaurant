@@ -1,5 +1,5 @@
 import { MENU_DATA } from "../data/menu";
-import { Categoria, Etiqueta, MenuItem } from "../types/menu";
+import type { Categoria, Etiqueta, MenuItem } from "../types/menu";
 
 type Query = {
     categoria?: Categoria;
