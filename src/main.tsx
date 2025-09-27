@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import "flowbite";
-
 import Layout from "./components/layout/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Menu from "./pages/Menu/Menu";

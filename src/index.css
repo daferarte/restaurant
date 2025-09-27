@@ -1,9 +1,7 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-*{box-sizing: border-box;}
-html, body, #root {height: 100%; margin: 0;}
-body { @apply font-body text-neutral-900 bg-white;}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body { @apply font-body text-neutral-900 bg-white; }
