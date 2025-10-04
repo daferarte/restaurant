@@ -10,22 +10,25 @@ import Reservas from "./pages/Reservas/Reservas"
 import Carrito from "./pages/Carrito/Carrito";
 import MenuIndex from "./pages/Menu/MenuIndex";
 import Entradas from "./pages/Menu/Entradas";
+import { CartProvider } from "./context/CartContext";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home/>} />
-          <Route path="/menu/*" element={<Menu />}>
-            <Route index element={<MenuIndex/>} />
-            <Route path="Entradas" element={<Entradas/>} />
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home/>} />
+            <Route path="/menu/*" element={<Menu />}>
+              <Route index element={<MenuIndex/>} />
+              <Route path="Entradas" element={<Entradas/>} />
+            </Route>
+            <Route path="/reservas" element={<Reservas/>} />
+            <Route path="/carrito" element={<Carrito/>} />
           </Route>
-          <Route path="/reservas" element={<Reservas/>} />
-          <Route path="/carrito" element={<Carrito/>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>
 );
